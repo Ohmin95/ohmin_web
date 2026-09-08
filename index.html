@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mintaek Oh — Postdoctoral Researcher, University of Toronto</title>
+<meta name="description" content="Mintaek Oh is a postdoctoral researcher in Electrical & Computer Engineering at the University of Toronto working on hybrid beamforming, low-resolution massive MIMO, RIS-aided networks, and machine learning for wireless systems.">
+<meta property="og:title" content="Mintaek Oh">
+<meta property="og:description" content="Postdoctoral Researcher, Electrical & Computer Engineering, University of Toronto">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='6' cy='24' r='2.4' fill='%231B4FE0'/%3E%3Ccircle cx='16' cy='24' r='2.4' fill='%231B4FE0'/%3E%3Ccircle cx='26' cy='24' r='2.4' fill='%231B4FE0'/%3E%3Cpath d='M16 21 L26 6' stroke='%231B4FE0' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #F4F6F9;
+    --surface: #FFFFFF;
+    --ink: #101B3A;
+    --ink-2: #4E576B;
+    --line: #D5DBE5;
+    --accent: #1B4FE0;
+    --accent-soft: #E3EAFB;
+    --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0F1524;
+      --surface: #141B2E;
+      --ink: #E8ECF4;
+      --ink-2: #9AA4BA;
+      --line: #273150;
+      --accent: #86A6FF;
+      --accent-soft: #1C2A4D;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "kern", "liga";
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Layout ---------- */
+  .page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 56px 40px 72px;
+    display: grid;
+    grid-template-columns: 296px minmax(0, 1fr);
+    column-gap: 72px;
+    align-items: start;
+  }
+  .side { position: sticky; top: 40px; }
+  .main { max-width: 68ch; }
+
+  /* ---------- Sidebar ---------- */
+  .mark { width: 160px; height: auto; display: block; margin: -6px 0 18px -4px; }
+  .mark .lobe { fill: var(--accent); fill-opacity: 0.14; stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round; }
+  .mark .element { fill: var(--accent); }
+  .mark .axis { stroke: var(--line); stroke-width: 1; }
+
+  .photo {
+    display: block;
+    width: 112px; height: 112px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0 0 20px;
+    background: var(--accent-soft);
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 2.1rem;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+  }
+  .role { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink); }
+  .role span { display: block; color: var(--ink-2); }
+
+  .links { list-style: none; padding: 0; margin: 22px 0 0; font-size: 0.95rem; line-height: 1.9; }
+  .links a { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .links a:hover { text-decoration: none; border-bottom-color: var(--accent); color: var(--accent); }
+
+  .nav { margin: 32px 0 0; padding: 20px 0 0; border-top: 1px solid var(--line); }
+  .nav ul { list-style: none; padding: 0; margin: 0; }
+  .nav a {
+    display: block;
+    padding: 4px 0 4px 14px;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+  }
+  .nav a:hover { color: var(--ink); text-decoration: none; }
+  .nav a.current { color: var(--accent); border-left-color: var(--accent); }
+
+  /* ---------- Main content ---------- */
+  section { padding: 0 0 48px; }
+  section + section { border-top: 1px solid var(--line); padding-top: 44px; }
+  section:first-child { padding-top: 6px; }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin: 0 0 22px;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.18rem;
+    margin: 30px 0 14px;
+  }
+  h3:first-of-type { margin-top: 0; }
+  p { margin: 0 0 1em; }
+  p:last-child { margin-bottom: 0; }
+
+  .lede { font-family: var(--serif); font-size: 1.2rem; line-height: 1.55; color: var(--ink); }
+
+  /* Research interests */
+  .interests { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .interests li { padding-left: 18px; position: relative; }
+  .interests li::before {
+    content: ""; position: absolute; left: 0; top: 0.72em;
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  }
+  .interests strong { font-weight: 600; }
+  .interests span { color: var(--ink-2); }
+
+  /* Publications */
+  .pubs { list-style: none; padding: 0; margin: 0; }
+  .pubs.journal { counter-reset: pub 10; }
+  .pubs.conf { counter-reset: pub 7; }
+  .pubs li { counter-increment: pub -1; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 4px; margin: 0 0 18px; }
+  .pubs li::before {
+    content: "[" counter(pub) "]";
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+  }
+  .pubs li > span { grid-column: 2; }
+  .pubs .title { font-weight: 500; display: block; }
+  .pubs .authors { display: block; color: var(--ink); font-size: 0.95rem; }
+  .pubs .authors b { font-weight: 600; }
+  .pubs .venue { display: block; color: var(--ink-2); font-size: 0.95rem; }
+  .pubs .venue i { font-style: italic; }
+  .pubs .status { color: var(--accent); }
+
+  /* Dated lists (education, awards) */
+  .dated { list-style: none; padding: 0; margin: 0; }
+  .dated li { display: grid; grid-template-columns: 7.2rem 1fr; gap: 0 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .dated li:first-child { border-top: 0; padding-top: 0; }
+  .dated time, .dated .when { color: var(--ink-2); font-variant-numeric: tabular-nums; font-size: 0.95rem; padding-top: 2px; }
+  .dated .what { font-weight: 500; }
+  .dated .where { display: block; color: var(--ink-2); font-size: 0.95rem; }
+
+  /* Service */
+  .service { margin: 0; display: grid; grid-template-columns: 9rem 1fr; gap: 12px 16px; }
+  .service dt { color: var(--ink-2); font-size: 0.95rem; padding-top: 2px; }
+  .service dd { margin: 0; }
+
+  footer { margin-top: 8px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.9rem; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .page { grid-template-columns: 1fr; padding: 32px 22px 56px; row-gap: 40px; }
+    .side { position: static; }
+    .main { max-width: none; }
+    .mark { width: 140px; }
+    .name { font-size: 1.9rem; }
+    .nav ul { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+    .nav a { padding: 4px 0; border-left: 0; border-bottom: 2px solid transparent; margin: 0; }
+    .nav a.current { border-bottom-color: var(--accent); }
+    .pubs li { grid-template-columns: 2.3rem 1fr; }
+    .dated li { grid-template-columns: 1fr; gap: 2px; }
+    .service { grid-template-columns: 1fr; gap: 4px 0; }
+    .service dd { margin-bottom: 8px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- ===================== Sidebar ===================== -->
+  <aside class="side">
+    <!-- Beam pattern of an 8-element uniform linear array steered 30° off broadside -->
+    <svg class="mark" viewBox="0 0 240 124" aria-hidden="true" focusable="false">
+      <line class="axis" x1="30" y1="112" x2="210" y2="112"/>
+      <path class="lobe" d="M120.0,112.0 L121.3,111.9 L123.0,111.5 L125.3,110.9 L128.3,109.8 L131.6,108.2 L135.1,106.2 L138.4,103.8 L140.8,101.4 L141.8,99.4 L141.2,98.8 L139.3,99.0 L136.1,100.3 L131.4,103.1 L125.2,107.6 L121.6,110.6 L126.6,105.9 L135.6,96.4 L145.1,85.1 L154.4,72.5 L162.8,59.1 L169.8,45.9 L174.6,34.0 L176.9,24.4 L176.3,18.3 L173.0,16.4 L167.2,19.3 L159.6,27.1 L150.8,39.3 L141.8,55.1 L133.5,72.9 L126.4,91.2 L121.1,108.0 L122.3,102.1 L123.8,92.4 L123.9,87.6 L123.0,87.6 L121.8,91.8 L120.7,99.0 L120.1,107.6 L120.0,112.0 L119.7,104.2 L119.1,98.5 L118.3,95.7 L117.8,96.1 L117.8,99.3 L118.4,104.4 L119.6,110.5 L117.8,105.0 L116.2,101.0 L115.1,99.1 L114.7,99.4 L115.2,101.6 L116.6,105.3 L118.7,109.7 L120.0,112.0 L117.3,107.7 L114.8,104.2 L112.7,102.0 L111.5,101.1 L111.2,101.5 L111.9,103.0 L113.6,105.4 L116.1,108.2 L119.1,111.1 L116.1,108.8 L112.9,106.7 L110.2,105.1 L108.0,104.2 L106.4,103.8 L105.5,104.0 L105.3,104.5 L106.0,105.8 L107.8,107.3 L110.1,108.8 L112.6,110.0 L115.0,110.9 L117.1,111.5 L118.7,111.9 L120.0,112.0 Z"/>
+      <g class="element">
+        <circle cx="50" cy="112" r="3.2"/><circle cx="70" cy="112" r="3.2"/><circle cx="90" cy="112" r="3.2"/><circle cx="110" cy="112" r="3.2"/>
+        <circle cx="130" cy="112" r="3.2"/><circle cx="150" cy="112" r="3.2"/><circle cx="170" cy="112" r="3.2"/><circle cx="190" cy="112" r="3.2"/>
+      </g>
+    </svg>
+
+    <!-- Add a file named profile.jpg next to index.html; the image is hidden if the file is missing. -->
+    <img class="photo" src="profile.jpg" alt="Portrait of Mintaek Oh" onerror="this.style.display='none'">
+
+    <h1 class="name">Mintaek Oh</h1>
+    <p class="role">
+      Postdoctoral Researcher
+      <span>Electrical &amp; Computer Engineering</span>
+      <span>University of Toronto</span>
+    </p>
+
+    <ul class="links">
+      <li><a href="mailto:mintaek.oh@mail.utoronto.ca">mintaek.oh@mail.utoronto.ca</a></li>
+      <!-- Replace the two placeholders below with your own profile URLs. -->
+      <li><a href="https://scholar.google.com/" rel="me">Google Scholar</a></li>
+      <li><a href="https://github.com/" rel="me">GitHub</a></li>
+      <li><a href="cv.pdf">Curriculum vitae (PDF)</a></li>
+    </ul>
+
+    <nav class="nav" aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ===================== Main ===================== -->
+  <main class="main">
+
+    <section id="about">
+      <p class="lede">
+        I design wireless communication systems that deliver high performance at low computational cost,
+        from hybrid beamforming and coarsely quantized massive MIMO to RIS-aided networks and learning-based
+        signal processing.
+      </p>
+      <p>
+        I am a postdoctoral researcher in the Edward S. Rogers Sr. Department of Electrical &amp; Computer
+        Engineering at the University of Toronto, working with Prof. Wei Yu. I received my Ph.D. in
+        Electrical Engineering from KAIST in 2026 and my M.S. from UNIST in 2023, both under the supervision
+        of Prof. Jinseok Choi, and my B.S. in Electronics Engineering from Jeonbuk National University
+        in 2021.
+      </p>
+      <p>
+        My work has appeared in IEEE Transactions on Wireless Communications, IEEE Transactions on
+        Communications, and IEEE Transactions on Vehicular Technology, and has been recognized with best
+        paper awards from the Korean Institute of Communications and Information Sciences and a silver
+        award in the IEEE Seoul Section Student Paper Contest.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <ul class="interests">
+        <li><strong>Hybrid beamforming</strong> <span>— low-dimensional subspace perspectives and scalable designs for MU-MIMO systems.</span></li>
+        <li><strong>Massive MIMO with low-resolution ADCs</strong> <span>— precoding, quantization-aware analysis, and energy-efficient architectures.</span></li>
+        <li><strong>RIS-aided networks</strong> <span>— scalable beamforming for multi-RIS systems under imperfect channel state information.</span></li>
+        <li><strong>Machine learning for wireless</strong> <span>— task-aware neural Kalman filtering and learning-based estimation with unknown dynamics.</span></li>
+        <li><strong>Secure and reliable communications</strong> <span>— artificial-noise-aided precoding and finite-blocklength optimization.</span></li>
+      </ul>
+      <p style="margin-top:22px;color:var(--ink-2);">Tools: MATLAB, Python (PyTorch).</p>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <h3>Journal papers</h3>
+      <ol class="pubs journal">
+        <li>
+          <span class="title">Task-Aware Neural Kalman Filtering for Unknown Dynamics</span>
+          <span class="authors"><b>Mintaek Oh</b>, Jeonghun Park, Nir Shlezinger, Yonina C. Eldar, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Signal Processing</i>, <span class="status">submitted</span></span>
+        </li>
+        <li>
+          <span class="title">Scalable and Convergent Generalized Power Iteration Precoding for Massive MIMO Systems</span>
+          <span class="authors">Seunghyeong Yoo, <b>Mintaek Oh</b>, Jeonghun Park, Namyoon Lee, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Wireless Communications</i>, <span class="status">under revision</span></span>
+        </li>
+        <li>
+          <span class="title">Scalable Beamforming Design for Multi-RIS-Aided MU-MIMO Systems with Imperfect CSIT</span>
+          <span class="authors"><b>Mintaek Oh</b> and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Wireless Communications</i>, vol. 25, pp. 22718–22733, 2026</span>
+        </li>
+        <li>
+          <span class="title">Full-Duplex Multiuser MISO Under Coarse Quantization: Per-Antenna SQNR Analysis and Beamforming Design</span>
+          <span class="authors">Seunghyeong Yoo, Jaehyun Kim, Seokjun Park, <b>Mintaek Oh</b>, Namyoon Lee, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Communications</i>, vol. 74, pp. 9742–9757, 2026</span>
+        </li>
+        <li>
+          <span class="title">Hybrid Precoding Revisited: Low-Dimensional Subspace Perspective for MU-MIMO Systems</span>
+          <span class="authors"><b>Mintaek Oh</b> and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Vehicular Technology</i>, <span class="status">early access</span>, 2026</span>
+        </li>
+        <li>
+          <span class="title">Generalized Power Iteration-Based Precoding With Low-Complexity Matrix Inversion Approaches for Massive MIMO Systems</span>
+          <span class="authors"><b>Mintaek Oh</b>, Seunghyeong Yoo, Namyoon Lee, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Vehicular Technology</i>, vol. 75, no. 6, pp. 11908–11913, 2026</span>
+        </li>
+        <li>
+          <span class="title">Artificial Noise-Aided Max-Min Fairness Secrecy Precoding With Partial Wiretap Channel Knowledge</span>
+          <span class="authors">Sungyu Kim, Eunsung Choi, <b>Mintaek Oh</b>, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Vehicular Technology</i>, vol. 74, no. 5, pp. 8390–8395, 2025</span>
+        </li>
+        <li>
+          <span class="title">Joint Optimization for Secure and Reliable Communications in Finite Blocklength Regime</span>
+          <span class="authors"><b>Mintaek Oh</b>, Jeonghun Park, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Transactions on Wireless Communications</i>, vol. 22, no. 12, pp. 9457–9472, 2023</span>
+        </li>
+        <li>
+          <span class="title">Joint Precoding and Artificial Noise Design for MU-MIMO Wiretap Channels</span>
+          <span class="authors">Eunsung Choi, <b>Mintaek Oh</b>, Jinseok Choi, Jeonghun Park, Namyoon Lee, and Naofal Al-Dhahir</span>
+          <span class="venue"><i>IEEE Transactions on Communications</i>, vol. 71, no. 3, pp. 1564–1578, 2023</span>
+        </li>
+      </ol>
+
+      <h3>Conference papers</h3>
+      <ol class="pubs conf">
+        <li>
+          <span class="title">Wideband Channel Tracking with Quantization Distortion</span>
+          <span class="authors"><b>Mintaek Oh</b>, Jinseok Choi, Seyong Kim, and Jeonghun Park</span>
+          <span class="venue"><i>International Conference on Information and Communication Technology Convergence (ICTC)</i>, 2024</span>
+        </li>
+        <li>
+          <span class="title">Joint and Simultaneous Optimization of Artificial Noise-aided Precoding for Secure Communications</span>
+          <span class="authors">Eunsung Choi, <b>Mintaek Oh</b>, Jinseok Choi, Jeonghun Park, Namyoon Lee, and Naofal Al-Dhahir</span>
+          <span class="venue"><i>IEEE Global Communications Conference (GLOBECOM)</i>, 2023</span>
+        </li>
+        <li>
+          <span class="title">OFDM Simulator for Underwater Acoustic Communications</span>
+          <span class="authors">Seyong Kim, Jeonghun Park, <b>Mintaek Oh</b>, and Jinseok Choi</span>
+          <span class="venue"><i>International Conference on Information and Communication Technology Convergence (ICTC)</i>, 2023</span>
+        </li>
+        <li>
+          <span class="title">A Survey on Statistical Channel Modeling for Underwater Acoustic Communications</span>
+          <span class="authors"><b>Mintaek Oh</b>, Jinseok Choi, Sungyu Kim, Seunghyeong Yoo, Seyong Kim, and Jeonghun Park</span>
+          <span class="venue"><i>International Conference on Information and Communication Technology Convergence (ICTC)</i>, 2023</span>
+        </li>
+        <li>
+          <span class="title">Secure Internet-of-Things Communications: Joint Precoding and Power Control</span>
+          <span class="authors"><b>Mintaek Oh</b>, Jeonghun Park, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE International Conference on Communications (ICC)</i>, 2022</span>
+        </li>
+        <li>
+          <span class="title">Energy-Efficient Precoding for Massive MIMO Systems with Low-Resolution Quantizers</span>
+          <span class="authors"><b>Mintaek Oh</b>, Jeonghun Park, Namyoon Lee, and Jinseok Choi</span>
+          <span class="venue"><i>IEEE Wireless Communications and Networking Conference (WCNC)</i>, 2022</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="awards">
+      <h2>Awards</h2>
+      <ul class="dated">
+        <li><time>2024</time><div><span class="what">Silver Award, IEEE Student Paper Contest</span><span class="where">IEEE Seoul Section</span></div></li>
+        <li><time>2024</time><div><span class="what">Best Paper Award</span><span class="where">Korean Institute of Communications and Information Sciences</span></div></li>
+        <li><time>2022</time><div><span class="what">Best Paper Award</span><span class="where">Korean Institute of Communications and Information Sciences</span></div></li>
+        <li><time>2022</time><div><span class="what">Student Travel Grant, IEEE WCNC</span><span class="where">IEEE Communications Society</span></div></li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="dated">
+        <li><span class="when">2026 – present</span><div><span class="what">Postdoctoral Researcher, Electrical &amp; Computer Engineering</span><span class="where">University of Toronto. Advisor: Prof. Wei Yu</span></div></li>
+        <li><span class="when">2023 – 2026</span><div><span class="what">Ph.D. in Electrical Engineering</span><span class="where">KAIST. Advisor: Prof. Jinseok Choi</span></div></li>
+        <li><span class="when">2021 – 2023</span><div><span class="what">M.S. in Electrical Engineering</span><span class="where">UNIST. Advisor: Prof. Jinseok Choi</span></div></li>
+        <li><span class="when">2014 – 2021</span><div><span class="what">B.S. in Electronics Engineering</span><span class="where">Jeonbuk National University. Advisor: Prof. Seok-Hwan Park</span></div></li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Service</h2>
+      <dl class="service">
+        <dt>Journal reviewer</dt>
+        <dd>IEEE Transactions on Wireless Communications, IEEE Transactions on Communications, IEEE Internet of Things Journal, IEEE Open Journal of the Communications Society</dd>
+        <dt>Conference reviewer</dt>
+        <dd>IEEE Global Communications Conference (GLOBECOM), IEEE International Conference on Communications (ICC)</dd>
+      </dl>
+    </section>
+
+    <footer>
+      Mintaek Oh, University of Toronto. Last updated September 2026.
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Highlight the section currently in view in the sidebar navigation.
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+    if (!('IntersectionObserver' in window)) return;
+    var visible = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+      var best = null, bestRatio = 0;
+      sections.forEach(function (s) {
+        if (visible[s.id] > bestRatio) { bestRatio = visible[s.id]; best = s.id; }
+      });
+      links.forEach(function (a) { a.classList.toggle('current', best !== null && a.getAttribute('href') === '#' + best); });
+    }, { rootMargin: '-15% 0px -60% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+    sections.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>
