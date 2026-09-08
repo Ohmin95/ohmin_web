@@ -89,11 +89,12 @@
   .name {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 2.1rem;
+    font-size: 1.85rem;
     line-height: 1.12;
     letter-spacing: -0.01em;
     margin: 0 0 10px;
   }
+  .name .deg { font-size: 0.55em; font-weight: 400; color: var(--ink-2); letter-spacing: 0; }
   .role { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink); }
   .role span { display: block; color: var(--ink-2); }
 
@@ -187,7 +188,7 @@
     .page { grid-template-columns: 1fr; padding: 32px 22px 56px; row-gap: 40px; }
     .side { position: static; }
     .main { max-width: none; }
-    .name { font-size: 1.9rem; }
+    .name { font-size: 1.7rem; }
     .photo { width: 140px; }
     .nav ul { display: flex; flex-wrap: wrap; gap: 4px 18px; }
     .nav a { padding: 4px 0; border-left: 0; border-bottom: 2px solid transparent; margin: 0; }
@@ -212,7 +213,7 @@
       <figcaption>Photo</figcaption>
     </figure>
 
-    <h1 class="name">Mintaek Oh</h1>
+    <h1 class="name">Mintaek Oh<span class="deg">, Ph.D.</span></h1>
     <p class="role">
       Postdoctoral Researcher
       <span>Electrical &amp; Computer Engineering</span>
@@ -220,6 +221,7 @@
     </p>
 
     <ul class="links">
+      <li><a href="mailto:ohmin@kaist.ac.kr">ohmin@kaist.ac.kr</a></li>
       <li><a href="mailto:mintaek.oh@mail.utoronto.ca">mintaek.oh@mail.utoronto.ca</a></li>
       <li><a href="https://scholar.google.com/citations?user=N3Vlc8QAAAAJ&amp;hl=en" rel="me">Google Scholar</a></li>
       <!-- The CV must be uploaded to the SAME folder as index.html with exactly this file name (lower-case): cv.pdf -->
@@ -271,9 +273,9 @@
       <h2>Research</h2>
       <ul class="interests">
         <li><strong>MU-MIMO beamforming</strong> <span>— low-complexity and scalable beamforming design for massive MIMO, including hybrid beamforming architectures and systems with low-resolution ADCs/DACs.</span></li>
-        <li><strong>Cell-free MIMO</strong> <span>— channel estimation under limited fronthaul capacity, jointly allocating orthogonal pilot dimensions and fronthaul quantization resolution.</span></li>
+        <li><strong>Cell-free MIMO</strong> <span>— channel estimation under limited fronthaul capacity, where pilot contamination is incurred deliberately as a form of CSI compression: reusing pilots reduces the CSI dimension each access point must forward, and the released fronthaul budget pays for finer quantization.</span></li>
         <li><strong>RIS-aided networks</strong> <span>— scalable beamforming for multi-RIS systems under imperfect channel state information, and channel estimation and beamforming design for RIS with low-resolution phase shifters, where discrete phase-shift optimization is recast as a continuous problem via Bussgang-based latent lifting.</span></li>
-        <li><strong>AI-aided Kalman filtering</strong> <span>— task-aware neural network-aided Kalman filters for unknown dynamics.</span></li>
+        <li><strong>AI-aided Kalman filtering</strong> <span>— task-aware neural Kalman filtering for unknown dynamics, where both the state predictor and the Kalman gain are learned jointly from data without knowledge of the state-evolution function or noise statistics, including Koopman lifting of nonlinear dynamics into a latent space with linear evolution.</span></li>
       </ul>
     </section>
 
