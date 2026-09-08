@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
 <title>Mintaek Oh — Postdoctoral Researcher, University of Toronto</title>
 <meta name="description" content="Mintaek Oh is a postdoctoral researcher in Electrical & Computer Engineering at the University of Toronto working on hybrid beamforming, low-resolution massive MIMO, RIS-aided networks, and machine learning for wireless systems.">
 <meta property="og:title" content="Mintaek Oh">
 <meta property="og:description" content="Postdoctoral Researcher, Electrical & Computer Engineering, University of Toronto">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B4FE0'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='white'%3EMO%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23E2B76A'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='black'%3EMO%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,26 +18,16 @@
 
 <style>
   :root {
-    --paper: #F4F6F9;
-    --surface: #FFFFFF;
-    --ink: #101B3A;
-    --ink-2: #4E576B;
-    --line: #D5DBE5;
-    --accent: #1B4FE0;
-    --accent-soft: #E3EAFB;
+    color-scheme: dark;
+    --paper: #000000;
+    --surface: #0E0E0E;
+    --ink: #F2F1EC;
+    --ink-2: #9C9B95;
+    --line: #262626;
+    --accent: #E2B76A;
+    --accent-soft: #2A2214;
     --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
     --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #0F1524;
-      --surface: #141B2E;
-      --ink: #E8ECF4;
-      --ink-2: #9AA4BA;
-      --line: #273150;
-      --accent: #86A6FF;
-      --accent-soft: #1C2A4D;
-    }
   }
 
   * { box-sizing: border-box; }
@@ -75,13 +67,23 @@
 
   /* ---------- Sidebar ---------- */
   .photo {
-    display: block;
-    width: 112px; height: 112px;
-    object-fit: cover;
+    width: 168px;
+    aspect-ratio: 4 / 5;
+    margin: 0 0 24px;
     border-radius: 6px;
-    margin: 0 0 20px;
-    background: var(--accent-soft);
+    overflow: hidden;
+    background: var(--surface);
+    position: relative;
   }
+  .photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .photo.empty { border: 1px dashed #3A3A3A; background: transparent; }
+  .photo figcaption {
+    display: none;
+    position: absolute; inset: 0;
+    align-items: center; justify-content: center;
+    color: var(--ink-2); font-size: 0.85rem;
+  }
+  .photo.empty figcaption { display: flex; }
 
   .name {
     font-family: var(--serif);
@@ -134,8 +136,6 @@
   p { margin: 0 0 1em; }
   p:last-child { margin-bottom: 0; }
 
-  .lede { font-family: var(--serif); font-size: 1.2rem; line-height: 1.55; color: var(--ink); }
-
   /* Research interests */
   .interests { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
   .interests li { padding-left: 18px; position: relative; }
@@ -186,6 +186,7 @@
     .side { position: static; }
     .main { max-width: none; }
     .name { font-size: 1.9rem; }
+    .photo { width: 140px; }
     .nav ul { display: flex; flex-wrap: wrap; gap: 4px 18px; }
     .nav a { padding: 4px 0; border-left: 0; border-bottom: 2px solid transparent; margin: 0; }
     .nav a.current { border-bottom-color: var(--accent); }
@@ -202,8 +203,12 @@
 
   <!-- ===================== Sidebar ===================== -->
   <aside class="side">
-    <!-- Add a file named profile.jpg next to index.html; the image is hidden if the file is missing. -->
-    <img class="photo" src="profile.jpg" alt="Portrait of Mintaek Oh" onerror="this.style.display='none'">
+    <!-- Photo: upload a file named profile.jpg (portrait, roughly 4:5) next to index.html.
+         Until it exists, a dashed placeholder marks the spot. -->
+    <figure class="photo">
+      <img src="profile.jpg" alt="Portrait of Mintaek Oh" onerror="this.parentNode.classList.add('empty'); this.remove();">
+      <figcaption>Photo</figcaption>
+    </figure>
 
     <h1 class="name">Mintaek Oh</h1>
     <p class="role">
@@ -237,23 +242,12 @@
   <main class="main">
 
     <section id="about">
-      <p class="lede">
-        I design wireless communication systems that deliver high performance at low computational cost,
-        from hybrid beamforming and coarsely quantized massive MIMO to RIS-aided networks and learning-based
-        signal processing.
-      </p>
       <p>
         I am a postdoctoral researcher in the Edward S. Rogers Sr. Department of Electrical &amp; Computer
         Engineering at the University of Toronto, working with Prof. Wei Yu. I received my Ph.D. in
         Electrical Engineering from KAIST in 2026 and my M.S. from UNIST in 2023, both under the supervision
         of Prof. Jinseok Choi, and my B.S. in Electronics Engineering from Jeonbuk National University
         in 2021.
-      </p>
-      <p>
-        My work has appeared in IEEE Transactions on Wireless Communications, IEEE Transactions on
-        Communications, and IEEE Transactions on Vehicular Technology, and has been recognized with best
-        paper awards from the Korean Institute of Communications and Information Sciences and a silver
-        award in the IEEE Seoul Section Student Paper Contest.
       </p>
     </section>
 
