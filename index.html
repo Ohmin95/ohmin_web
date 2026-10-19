@@ -154,8 +154,8 @@
      journal: pub = (number of published/accepted papers) + 1, sub = (number of submitted/under-revision papers) + 1.
      conf:    pub = (number of conference papers) + 1.
      Raise the matching number by one whenever you add a paper. */
-  .pubs.journal { counter-reset: pub 8 sub 3; }
-  .pubs.conf { counter-reset: pub 7; }
+  .pubs.journal { counter-reset: pub 8 sub 4; }
+  .pubs.conf { counter-reset: pub 8; }
   .pubs li { counter-increment: pub -1; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 4px; margin: 0 0 18px; }
   .pubs li::before {
     content: "[" counter(pub) "]";
